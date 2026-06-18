@@ -26,19 +26,18 @@
   <main>
     <img src="pwa/icon-192.png" alt="HS Irrigation logo">
     <h1>HSMESPE App</h1>
-    <p>This public page hosts the installable shell, non-secret metadata, the live Windows-host resolver, and encrypted private bundles when published. Raw pricing, templates, passwords, and encryption keys are not stored here in plaintext.</p>
     <p>Current build: <code>V3.31.7 GitHub Security Hardening Build</code></p>
     <p><a id="openApp" href="current.json">Check current app link</a></p>
     <div id="status" class="status">Loading current host...</div>
     <div id="bundleStatus" class="notice">Checking encrypted bundle availability...</div>
-    <form id="unlockForm">
+    <form id="unlockForm" autocomplete="off">
       <label>
         Username
-        <input id="unlockUsername" autocomplete="username" placeholder="asher.hs">
+        <input id="unlockUsername" autocomplete="off">
       </label>
       <label>
         App password
-        <input id="unlockPassword" type="password" autocomplete="current-password">
+        <input id="unlockPassword" type="password" autocomplete="off">
       </label>
       <button id="unlockButton" type="submit" disabled>Unlock Encrypted App Bundle</button>
       <div id="unlockStatus" class="status">Encrypted bundle not checked yet.</div>
