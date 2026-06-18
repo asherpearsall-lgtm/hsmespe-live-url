@@ -1,0 +1,66 @@
+{
+  "app_version": "V3.31.5 GitHub Asset Layer Build",
+  "entries": [
+    {
+      "content_type": "text/markdown",
+      "path": "PUBLIC_ASSET_POLICY.md",
+      "public_safe": true,
+      "sha256": "cc2a32de1fe3a87f5ac254ca28761546667af4508d9e65c60e44d4c090a02c4a",
+      "size_bytes": 738
+    },
+    {
+      "content_type": "text/html",
+      "path": "index.html",
+      "public_safe": true,
+      "sha256": "0c307b8a9b880d2d07d93c8dbe533b501e8d9f89797487ddbb0bfa1a27b9194f",
+      "size_bytes": 2187
+    },
+    {
+      "content_type": "application/manifest+json",
+      "path": "manifest.webmanifest",
+      "public_safe": true,
+      "sha256": "b5f0c0310bd112f113ca3ad5200a8ffedd7127692555bf2aaabcfb546fe127da",
+      "size_bytes": 786
+    },
+    {
+      "content_type": "text/html",
+      "path": "offline.html",
+      "public_safe": true,
+      "sha256": "61d909724661edc664063e4aaea7650ed60054eda590d913484be0ebb7cc0617",
+      "size_bytes": 1586
+    },
+    {
+      "content_type": "image/png",
+      "path": "pwa/icon-192.png",
+      "public_safe": true,
+      "sha256": "621a80fa0e4c2202a3ee1f731dde6a92c7357b94c80344beabb72f3f0f6ef197",
+      "size_bytes": 26470
+    },
+    {
+      "content_type": "image/png",
+      "path": "pwa/icon-512.png",
+      "public_safe": true,
+      "sha256": "743598cf97e6410e27eb6ef8c2887855aefd6c295c60fbd8bebb552b5858a422",
+      "size_bytes": 168653
+    },
+    {
+      "content_type": "image/svg+xml",
+      "path": "pwa/logo.svg",
+      "public_safe": true,
+      "sha256": "fa53eb7ce916449aaee939398581e4fca0d751c6ef3dd61c99cc3bae8b1105a1",
+      "size_bytes": 1574
+    },
+    {
+      "content_type": "application/json",
+      "path": "version.json",
+      "public_safe": true,
+      "sha256": "e6b674655444394b3c1ab1da59827d37a9e3104f899eff4117a11727592b9645",
+      "size_bytes": 468
+    }
+  ],
+  "generated_at": "2026-06-18T07:36:45.498224+00:00",
+  "include_private_engine": false,
+  "package_name": "hs-master-estimator",
+  "package_version": "3.31.5",
+  "public_safe": true
+}
