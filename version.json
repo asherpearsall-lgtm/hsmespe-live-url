@@ -1,8 +1,8 @@
 {
-  "app_version": "V3.31.5 GitHub Asset Layer Build",
-  "generated_at": "2026-06-18T07:51:03.168220+00:00",
+  "app_version": "V3.31.6 Encrypted GitHub Unlock Build",
+  "generated_at": "2026-06-18T11:53:39.901892+00:00",
   "package_name": "hs-master-estimator",
-  "package_version": "3.31.5",
+  "package_version": "3.31.6",
   "private_engine_included": false,
   "public_safe": true,
   "windows_host_required_for": [
