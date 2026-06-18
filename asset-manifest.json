@@ -1,12 +1,12 @@
 {
-  "app_version": "V3.31.6 Encrypted GitHub Unlock Build",
+  "app_version": "V3.31.7 GitHub Security Hardening Build",
   "entries": [
     {
       "content_type": "text/markdown",
       "path": "PUBLIC_ASSET_POLICY.md",
       "public_safe": true,
-      "sha256": "e20cc13141517658a4308049802cbaac872a9b4db73d462ac42fb9d2cd7d338d",
-      "size_bytes": 743
+      "sha256": "6765fd20a7af79b90ac6d914b1b2edb4a843a64d3dc46d0163300f37a2960014",
+      "size_bytes": 745
     },
     {
       "content_type": "text/javascript",
@@ -19,8 +19,8 @@
       "content_type": "text/html",
       "path": "index.html",
       "public_safe": true,
-      "sha256": "39c2b66f2a2bd5c7c6c9a39f3e81854f3ce249bd9d0cd1d0b61a2fd45a596b6a",
-      "size_bytes": 4152
+      "sha256": "02c42202bc734791a9b09793d7721b0cd5698634ba403f1c6229135112c3129a",
+      "size_bytes": 5562
     },
     {
       "content_type": "application/manifest+json",
@@ -61,13 +61,13 @@
       "content_type": "application/json",
       "path": "version.json",
       "public_safe": true,
-      "sha256": "1588138b359aa83e1843daf96775e3a0f8cb7fbb3de3596196eec31a09aecb07",
-      "size_bytes": 473
+      "sha256": "90430ae96ffc2d41070a3ad2a23b47c9e162e557ac6cf53ccf58d3f53f8f226e",
+      "size_bytes": 475
     }
   ],
-  "generated_at": "2026-06-18T11:53:39.903907+00:00",
+  "generated_at": "2026-06-18T12:18:01.818418+00:00",
   "include_private_engine": false,
   "package_name": "hs-master-estimator",
-  "package_version": "3.31.6",
+  "package_version": "3.31.7",
   "public_safe": true
 }
