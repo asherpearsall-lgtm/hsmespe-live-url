@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="HS Irrigation logo">
+  <defs>
+    <linearGradient id="hsBlue" x1="118" y1="74" x2="388" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#064f83"/>
+      <stop offset="1" stop-color="#0870bd"/>
+    </linearGradient>
+    <linearGradient id="hsGreen" x1="89" y1="268" x2="401" y2="469" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3f9719"/>
+      <stop offset="1" stop-color="#65c90a"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#hsBlue)" d="M126 254c27-76 78-142 130-206 56 65 105 130 130 206l-35 11c-24-66-62-120-95-160-35 42-76 96-96 160z"/>
+  <path fill="#045284" opacity=".78" d="M183 283c5-73 44-137 76-176-22 48-39 94-44 150-16 9-24 19-32 26z"/>
+  <path fill="url(#hsGreen)" d="M64 266c80 14 151 56 188 164-75-8-143-50-179-111-11-19-14-37-9-53z"/>
+  <path fill="url(#hsGreen)" d="M448 266c-80 14-151 56-188 164 75-8 143-50 179-111 11-19 14-37 9-53z"/>
+  <path fill="url(#hsGreen)" d="M89 313c82 49 144 93 166 146-71-8-142-49-166-146z"/>
+  <path fill="url(#hsGreen)" d="M423 313c-82 49-144 93-166 146 71-8 142-49 166-146z"/>
+  <path fill="#63ca0c" d="M238 436c8-112 24-191 52-257-3 105-4 184 8 257z"/>
+  <path fill="#52b914" d="M215 431c-17-72-46-132-88-178 65 43 102 93 123 178z"/>
+  <path fill="#62c90d" d="M294 433c28-82 72-139 132-171-53 50-85 107-104 170z"/>
+  <path fill="#48a619" d="M173 441c-23-48-52-84-88-108 55 25 95 61 126 108z"/>
+  <path fill="#58be11" d="M338 441c23-48 52-84 88-108-55 25-95 61-126 108z"/>
+</svg>
