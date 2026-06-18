@@ -1,10 +1,9 @@
 {
-  "status": "no_live_host",
-  "current_url": "",
-  "app_url": "",
-  "install_url": "",
-  "generated_at": "2026-06-18T07:39:43.1624695Z",
-  "app_version": "V3.31.5 GitHub Asset Layer Build",
-  "package_version": "3.31.5",
-  "source": "hsm_estimator_github_placeholder"
+  "current_url": "https://diffs-endangered-simplified-saving.trycloudflare.com",
+  "app_url": "https://diffs-endangered-simplified-saving.trycloudflare.com/app",
+  "install_url": "https://diffs-endangered-simplified-saving.trycloudflare.com/app?source=pwa",
+  "generated_at": "2026-06-18T17:29:44.3858482Z",
+  "app_version": "V3.31.7 GitHub Security Hardening Build",
+  "package_version": "3.31.7",
+  "source": "hsm_estimator_windows_public_host"
 }
