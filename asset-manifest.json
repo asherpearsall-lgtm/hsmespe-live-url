@@ -1,19 +1,26 @@
 {
-  "app_version": "V3.31.5 GitHub Asset Layer Build",
+  "app_version": "V3.31.6 Encrypted GitHub Unlock Build",
   "entries": [
     {
       "content_type": "text/markdown",
       "path": "PUBLIC_ASSET_POLICY.md",
       "public_safe": true,
-      "sha256": "cc2a32de1fe3a87f5ac254ca28761546667af4508d9e65c60e44d4c090a02c4a",
-      "size_bytes": 738
+      "sha256": "e20cc13141517658a4308049802cbaac872a9b4db73d462ac42fb9d2cd7d338d",
+      "size_bytes": 743
+    },
+    {
+      "content_type": "text/javascript",
+      "path": "github-private-unlock.js",
+      "public_safe": true,
+      "sha256": "1f44b08d70c5c4286dbe632cafd2b337c00da0bcb7928414ebfe65d234fa91ba",
+      "size_bytes": 3998
     },
     {
       "content_type": "text/html",
       "path": "index.html",
       "public_safe": true,
-      "sha256": "0c307b8a9b880d2d07d93c8dbe533b501e8d9f89797487ddbb0bfa1a27b9194f",
-      "size_bytes": 2187
+      "sha256": "39c2b66f2a2bd5c7c6c9a39f3e81854f3ce249bd9d0cd1d0b61a2fd45a596b6a",
+      "size_bytes": 4152
     },
     {
       "content_type": "application/manifest+json",
@@ -54,13 +61,13 @@
       "content_type": "application/json",
       "path": "version.json",
       "public_safe": true,
-      "sha256": "16eb4c63ca9db5089fbcea1558dd749c931517cbf201b8d6aeb2ee4a5c2fe027",
-      "size_bytes": 468
+      "sha256": "1588138b359aa83e1843daf96775e3a0f8cb7fbb3de3596196eec31a09aecb07",
+      "size_bytes": 473
     }
   ],
-  "generated_at": "2026-06-18T07:51:03.170223+00:00",
+  "generated_at": "2026-06-18T11:53:39.903907+00:00",
   "include_private_engine": false,
   "package_name": "hs-master-estimator",
-  "package_version": "3.31.5",
+  "package_version": "3.31.6",
   "public_safe": true
 }
