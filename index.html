@@ -14,7 +14,6 @@
     a { color: #1d6f2b; font-weight: 700; }
     code { background: #eef4ed; border-radius: 6px; padding: 2px 5px; }
     .status { border-top: 1px solid #e5ebe8; margin-top: 18px; padding-top: 14px; }
-    .notice { border: 1px solid #d8dfdb; border-radius: 10px; background: #f7fbf6; margin-top: 16px; padding: 12px; color: #34443e; }
     form { display: grid; gap: 12px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #e5ebe8; }
     label { display: grid; gap: 6px; font-weight: 700; }
     input { min-height: 42px; border: 1px solid #cddad5; border-radius: 8px; padding: 10px 12px; font: inherit; }
@@ -27,9 +26,8 @@
     <img src="pwa/icon-192.png" alt="HS Irrigation logo">
     <h1>HSMESPE App</h1>
     <p>Current build: <code>V3.31.7 GitHub Security Hardening Build</code></p>
-    <p><a id="openApp" href="current.json">Check current app link</a></p>
-    <div id="status" class="status">Loading current host...</div>
-    <div id="bundleStatus" class="notice">Checking encrypted bundle availability...</div>
+    <p><a id="openApp" href="current.json">Open current app</a></p>
+    <div id="status" class="status">Enter your username and app password to continue.</div>
     <form id="unlockForm" autocomplete="off">
       <label>
         Username
@@ -39,8 +37,8 @@
         App password
         <input id="unlockPassword" type="password" autocomplete="off">
       </label>
-      <button id="unlockButton" type="submit" disabled>Unlock Encrypted App Bundle</button>
-      <div id="unlockStatus" class="status">Encrypted bundle not checked yet.</div>
+      <button id="unlockButton" type="submit">Unlock Encrypted App Bundle</button>
+      <div id="unlockStatus" class="status">Ready to connect to the current app.</div>
     </form>
   </main>
   <script src="github-private-unlock.js"></script>
@@ -54,46 +52,56 @@
       }
       return '';
     }
-    fetch('current.json', {cache: 'no-store'})
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error('current.json unavailable')))
-      .then((payload) => {
-        const appUrl = safeHttpUrl(payload.app_url || payload.current_url || '');
-        document.getElementById('status').textContent = appUrl ? `Current host: ${appUrl}` : 'No current Windows host has been published yet.';
-        if (appUrl) document.getElementById('openApp').href = appUrl;
-      })
-      .catch((error) => {
-        document.getElementById('status').textContent = `Current host unavailable: ${error.message || error}`;
-      });
-    async function checkEncryptedBundleAvailability() {
-      const bundleStatus = document.getElementById('bundleStatus');
-      const unlockButton = document.getElementById('unlockButton');
-      try {
-        const response = await fetch('private/user-manifest.json', {cache: 'no-store'});
-        if (!response.ok) throw new Error(`private bundle unavailable (${response.status})`);
-        bundleStatus.textContent = 'Encrypted estimator bundle is available for approved users.';
-        unlockButton.disabled = false;
-      } catch (error) {
-        unlockButton.disabled = true;
-        bundleStatus.textContent = 'Encrypted estimator bundle is not published here. Use the current Windows host link when available, or publish the encrypted bundle from the host after explicitly accepting that public-repo risk.';
-      }
+    let currentAppUrl = '';
+    async function loadCurrentAppUrl() {
+      const response = await fetch('current.json', {cache: 'no-store'});
+      if (!response.ok) throw new Error('current link unavailable');
+      const payload = await response.json();
+      const appUrl = safeHttpUrl(payload.app_url || payload.current_url || '');
+      if (!appUrl) throw new Error('current link unavailable');
+      currentAppUrl = appUrl;
+      document.getElementById('openApp').href = appUrl;
+      document.getElementById('status').textContent = 'Current app link ready.';
+      return appUrl;
     }
-    checkEncryptedBundleAvailability();
+    loadCurrentAppUrl().catch(() => {
+      document.getElementById('status').textContent = 'Current app link unavailable. Start the Windows host and try again.';
+    });
+    function submitHostLogin(appUrl, username, password) {
+      const origin = new URL(appUrl).origin;
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = `${origin}/login/github-handoff`;
+      form.style.display = 'none';
+      for (const [name, value] of Object.entries({
+        username,
+        password,
+        remember: 'true',
+        next_url: '/app?source=github'
+      })) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
+      }
+      document.body.appendChild(form);
+      form.submit();
+    }
     document.getElementById('unlockForm').addEventListener('submit', async (event) => {
       event.preventDefault();
       const button = document.getElementById('unlockButton');
       const status = document.getElementById('unlockStatus');
       button.disabled = true;
-      status.textContent = 'Checking encrypted user package...';
+      status.textContent = 'Connecting to the current app...';
       try {
-        const result = await window.HSMESPE_GITHUB_UNLOCK.unlockWithPassword({
-          username: document.getElementById('unlockUsername').value,
-          password: document.getElementById('unlockPassword').value,
-          baseUrl: '.'
-        });
-        status.textContent = `Unlocked and cached package ${result.packageVersion || 'unknown'} for ${result.permission || 'estimator'} access.`;
+        const username = document.getElementById('unlockUsername').value;
+        const password = document.getElementById('unlockPassword').value;
+        if (!username.trim() || !password) throw new Error('Username and app password are required.');
+        const appUrl = currentAppUrl || await loadCurrentAppUrl();
+        submitHostLogin(appUrl, username, password);
       } catch (error) {
         status.textContent = error && error.message ? error.message : String(error);
-      } finally {
         button.disabled = false;
       }
     });
