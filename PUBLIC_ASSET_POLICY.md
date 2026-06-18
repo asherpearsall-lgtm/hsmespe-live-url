@@ -1,4 +1,4 @@
-# HSMESPE GitHub Asset Policy - V3.31.5 GitHub Asset Layer Build
+# HSMESPE GitHub Asset Policy - V3.31.6 Encrypted GitHub Unlock Build
 
 This bundle is designed for a public GitHub Pages/raw.githubusercontent asset layer.
 
