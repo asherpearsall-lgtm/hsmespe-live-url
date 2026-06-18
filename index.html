@@ -14,6 +14,7 @@
     a { color: #1d6f2b; font-weight: 700; }
     code { background: #eef4ed; border-radius: 6px; padding: 2px 5px; }
     .status { border-top: 1px solid #e5ebe8; margin-top: 18px; padding-top: 14px; }
+    .notice { border: 1px solid #d8dfdb; border-radius: 10px; background: #f7fbf6; margin-top: 16px; padding: 12px; color: #34443e; }
     form { display: grid; gap: 12px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #e5ebe8; }
     label { display: grid; gap: 6px; font-weight: 700; }
     input { min-height: 42px; border: 1px solid #cddad5; border-radius: 8px; padding: 10px 12px; font: inherit; }
@@ -26,9 +27,10 @@
     <img src="pwa/icon-192.png" alt="HS Irrigation logo">
     <h1>HSMESPE App</h1>
     <p>This public page hosts the installable shell, non-secret metadata, the live Windows-host resolver, and encrypted private bundles when published. Raw pricing, templates, passwords, and encryption keys are not stored here in plaintext.</p>
-    <p>Current build: <code>V3.31.6 Encrypted GitHub Unlock Build</code></p>
+    <p>Current build: <code>V3.31.7 GitHub Security Hardening Build</code></p>
     <p><a id="openApp" href="current.json">Check current app link</a></p>
     <div id="status" class="status">Loading current host...</div>
+    <div id="bundleStatus" class="notice">Checking encrypted bundle availability...</div>
     <form id="unlockForm">
       <label>
         Username
@@ -38,22 +40,45 @@
         App password
         <input id="unlockPassword" type="password" autocomplete="current-password">
       </label>
-      <button id="unlockButton" type="submit">Unlock Encrypted App Bundle</button>
+      <button id="unlockButton" type="submit" disabled>Unlock Encrypted App Bundle</button>
       <div id="unlockStatus" class="status">Encrypted bundle not checked yet.</div>
     </form>
   </main>
   <script src="github-private-unlock.js"></script>
   <script>
+    function safeHttpUrl(value) {
+      try {
+        const parsed = new URL(String(value || ''), window.location.href);
+        if (parsed.protocol === 'https:' || parsed.protocol === 'http:') return parsed.href;
+      } catch (error) {
+        return '';
+      }
+      return '';
+    }
     fetch('current.json', {cache: 'no-store'})
       .then((response) => response.ok ? response.json() : Promise.reject(new Error('current.json unavailable')))
       .then((payload) => {
-        const appUrl = payload.app_url || payload.current_url || '';
+        const appUrl = safeHttpUrl(payload.app_url || payload.current_url || '');
         document.getElementById('status').textContent = appUrl ? `Current host: ${appUrl}` : 'No current Windows host has been published yet.';
         if (appUrl) document.getElementById('openApp').href = appUrl;
       })
       .catch((error) => {
         document.getElementById('status').textContent = `Current host unavailable: ${error.message || error}`;
       });
+    async function checkEncryptedBundleAvailability() {
+      const bundleStatus = document.getElementById('bundleStatus');
+      const unlockButton = document.getElementById('unlockButton');
+      try {
+        const response = await fetch('private/user-manifest.json', {cache: 'no-store'});
+        if (!response.ok) throw new Error(`private bundle unavailable (${response.status})`);
+        bundleStatus.textContent = 'Encrypted estimator bundle is available for approved users.';
+        unlockButton.disabled = false;
+      } catch (error) {
+        unlockButton.disabled = true;
+        bundleStatus.textContent = 'Encrypted estimator bundle is not published here. Use the current Windows host link when available, or publish the encrypted bundle from the host after explicitly accepting that public-repo risk.';
+      }
+    }
+    checkEncryptedBundleAvailability();
     document.getElementById('unlockForm').addEventListener('submit', async (event) => {
       event.preventDefault();
       const button = document.getElementById('unlockButton');
