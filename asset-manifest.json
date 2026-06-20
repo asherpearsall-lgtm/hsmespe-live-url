@@ -19,8 +19,8 @@
       "content_type": "text/html",
       "path": "index.html",
       "public_safe": true,
-      "sha256": "d061097bbbb2f92aaee1730ad8a6a3206c10a0deb9eade6aedaaaae76a2d18e1",
-      "size_bytes": 4975
+      "sha256": "7b46eeb1824ef541a3195d6468e975146e2fe9f98c294546cff73d9271c19b13",
+      "size_bytes": 5007
     },
     {
       "content_type": "application/manifest+json",
@@ -61,11 +61,11 @@
       "content_type": "application/json",
       "path": "version.json",
       "public_safe": true,
-      "sha256": "3ebacb2645274e989df19ff75d6a67e298b388642980d497363ec9ab5481f392",
+      "sha256": "adc64a5b8d304c5793d35110350d3d69477d41cc6b4c028904a1bc3bfaeb3f63",
       "size_bytes": 475
     }
   ],
-  "generated_at": "2026-06-20T08:05:32.428776+00:00",
+  "generated_at": "2026-06-20T08:52:02.059781+00:00",
   "include_private_engine": false,
   "package_name": "hs-master-estimator",
   "package_version": "3.31.7",
