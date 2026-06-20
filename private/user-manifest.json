@@ -1,0 +1,29 @@
+{
+  "app_version": "V3.31.7 GitHub Security Hardening Build",
+  "bundle_path": "private/estimator-bundle.enc.json",
+  "generated_at": "2026-06-20T03:19:01Z",
+  "package_name": "hs-master-estimator",
+  "package_version": "3.31.7",
+  "schema": 1,
+  "security_note": "Encrypted GitHub bundle. Public repo does not contain plaintext pricing, templates, passwords, content keys, or admin tokens.",
+  "user_unlock_records": [
+    {
+      "kdf": {
+        "iterations": 600000,
+        "name": "PBKDF2-HMAC-SHA256",
+        "salt": "8_qK0nypodeXxwek2PiJJw"
+      },
+      "revoked": false,
+      "schema": 1,
+      "unlock_package": {
+        "aad": "hsmespe-user-unlock:f2737500110b3c18e369d2aa0b595222731ca8378b44f6daee1414001e1c2787",
+        "alg": "AES-256-GCM",
+        "ciphertext": "AM3bwWaWAtZm2jYyRx005un2Yfv87Z02ZAr6u7EZsQufDhXpMA-agAedJ6hJqs7vyWwCmrtkad2t3SZ1wK9w2fMsjQYRH0nuYI117-t5kNttOauD_srWGCF3UEq6I0txbO1nt0UVD5uxm9ahohfmq-yScqN9V7_6EHiFtQKwYYukJyq1yVVEY93uKK4HrMUOTNlltypyIZg87r-wYIzfKRiaInRtpN_E9eKzdQkCgUKDe11HDBmZEOAZU6GF_y9jdNIyb6W3OR_E57PEW74sgFTEkg60qRDCYGTx72DeR2Y0mfmi2N7zuNM5fvPjuR7cXH1T25VUp3goykLtmWi6xK129FoNNK3fCX1exfJNxoFQ8unQyOTdcCXGBRjivL2v0MAXYdqriCc_4g5LhjzIz98V1y5b8pZx1NVZM2GY5GWxUH30jD8IrSdAqkLtRk3L0goSwVUa27GWz2mq2X53xq3hpA4",
+        "nonce": "7--AUc0iCWsdAcwt",
+        "schema": 1
+      },
+      "updated_at": "2026-06-18T15:34:49Z",
+      "user_id_hash": "f2737500110b3c18e369d2aa0b595222731ca8378b44f6daee1414001e1c2787"
+    }
+  ]
+}
