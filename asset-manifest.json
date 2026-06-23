@@ -61,11 +61,11 @@
       "content_type": "application/json",
       "path": "version.json",
       "public_safe": true,
-      "sha256": "adc64a5b8d304c5793d35110350d3d69477d41cc6b4c028904a1bc3bfaeb3f63",
+      "sha256": "4df96f1d705657ebc340c386676cce2ba4271d9ebf83d1dd3c8218132834d504",
       "size_bytes": 475
     }
   ],
-  "generated_at": "2026-06-20T08:52:02.059781+00:00",
+  "generated_at": "2026-06-23T02:01:23.689351+00:00",
   "include_private_engine": false,
   "package_name": "hs-master-estimator",
   "package_version": "3.31.7",
