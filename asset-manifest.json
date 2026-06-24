@@ -1,12 +1,12 @@
 {
-  "app_version": "V3.31.7 GitHub Security Hardening Build",
+  "app_version": "V3.31.8 Reconnect Report Sync Build",
   "entries": [
     {
       "content_type": "text/markdown",
       "path": "PUBLIC_ASSET_POLICY.md",
       "public_safe": true,
-      "sha256": "6765fd20a7af79b90ac6d914b1b2edb4a843a64d3dc46d0163300f37a2960014",
-      "size_bytes": 745
+      "sha256": "f3c2d81f66afeedebd783ca9974d021d477846e5a757a3bdeb0bd26f890e6550",
+      "size_bytes": 741
     },
     {
       "content_type": "text/javascript",
@@ -19,8 +19,8 @@
       "content_type": "text/html",
       "path": "index.html",
       "public_safe": true,
-      "sha256": "7b46eeb1824ef541a3195d6468e975146e2fe9f98c294546cff73d9271c19b13",
-      "size_bytes": 5007
+      "sha256": "d97c5aa37b3eb89195d800bd7da07da6b2bdfc0699d9bc97e6512339e3a879ca",
+      "size_bytes": 5003
     },
     {
       "content_type": "application/manifest+json",
@@ -61,13 +61,13 @@
       "content_type": "application/json",
       "path": "version.json",
       "public_safe": true,
-      "sha256": "4df96f1d705657ebc340c386676cce2ba4271d9ebf83d1dd3c8218132834d504",
-      "size_bytes": 475
+      "sha256": "3060f9eeb69760153d3eff37810a8c68954e0b183e6d2fd9e2107a57b287ccd6",
+      "size_bytes": 471
     }
   ],
-  "generated_at": "2026-06-23T02:01:23.689351+00:00",
+  "generated_at": "2026-06-24T22:17:48.511569+00:00",
   "include_private_engine": false,
   "package_name": "hs-master-estimator",
-  "package_version": "3.31.7",
+  "package_version": "3.31.8",
   "public_safe": true
 }
